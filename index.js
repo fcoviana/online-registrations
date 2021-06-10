@@ -16,12 +16,29 @@ class Repository {
   }
 }
 
+class ExportRegistrationPdfExporter {
+  generate(data) {
+    return data;
+  }
+};
+
+class Storage {
+  store(fileName, path, content) {
+    return true;
+  }
+};
+
 try {
   const exportRegistrationUseCase = new ExportRegistration({
-    loadRegistationRepository: new Repository()
+    loadRegistationRepository: new Repository(),
+    exportRegistrationPdfExporter: new ExportRegistrationPdfExporter(),
+    storage: new Storage()
+
   });
 
-  console.log(exportRegistrationUseCase.handle('112'));
+  console.log(exportRegistrationUseCase.handle({
+    cpf: '112', pdfFileName: 'lista-alunos.pdf', path: '/home'
+  }));
 } catch (error) {
   console.error(error);
 }
