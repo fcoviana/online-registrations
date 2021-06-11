@@ -5,10 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:make": "npx knex --knexfile src/infra/config/knexfile.js migrate:make",
+    "db:run": "npx knex --knexfile src/infra/config/knexfile.js migrate:latest",
+    "db:rollback": "npx knex --knexfile src/infra/config/knexfile.js migrate:rollback"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "knex": "^0.20.13",
+    "mysql": "^2.18.1",
+    "express": "^4.17.1"
+  }
 }
