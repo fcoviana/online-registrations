@@ -2,8 +2,8 @@ const InputBoundary = require('./input-boundary');
 const OutputBoundary = require('./output-boundary');
 
 module.exports = class ExportRegistration {
-  constructor({ loadRegistationRepository, exportRegistrationJsonExporter, storage } = {}) {
-    this.loadRegistationRepository = loadRegistationRepository;
+  constructor({ registationRepository, exportRegistrationJsonExporter, storage } = {}) {
+    this.registationRepository = registationRepository;
     this.exportRegistrationJsonExporter = exportRegistrationJsonExporter;
     this.storage = storage;
   }
@@ -11,7 +11,7 @@ module.exports = class ExportRegistration {
   async handle(input) {
     const inputBoundary = new InputBoundary(input);
     const { cpf, pdfFileName, path } = inputBoundary;
-    const registration = this.loadRegistationRepository.loadByRegistrationNumber(cpf);
+    const registration = await this.registationRepository.loadByRegistrationNumber(cpf);
 
     const fileContent = this.exportRegistrationJsonExporter.generate(registration);
     await this.storage.store(pdfFileName, path, fileContent);
