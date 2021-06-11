@@ -1,4 +1,4 @@
-module.exports = class ExportRegistrationPdfExporter {
+module.exports = class ExportRegistrationJsonExporter {
   /*
   * @param {Registration} registration
   * @returns {String}
