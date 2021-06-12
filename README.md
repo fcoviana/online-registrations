@@ -1,32 +1,33 @@
 # Online Registrations
 
 #### 1. Code structure
+
     src
-	    - app
-			-- contracts
+        - app
+                -- contracts
                 -- export-registration-json-exporter.js
                 -- storage.js
-			-- use-case
-			    -- export-registration
+    		-- use-case
+    		    -- export-registration
                     -- export-registration.js
                     -- input-boundary.js
                     -- output-boundary.js
-	    - domain
-			-- entities
+        - domain
+    		-- entities
                 -- registration.js
-			-- repositories
-			    -- registration-repository.js
+    		-- repositories
+    		    -- registration-repository.js
             -- value-objects
-			    -- cpf.js
+    		    -- cpf.js
                 -- registration-repository.js
                 -- email.js
-	    - infra
-			-- adapters
+        - infra
+    		-- adapters
                 -- js-json-adapter.js
                 -- local-storage-adapter.js
             -- config
                 -- constants.js
-			    -- knex.js
+    		    -- knex.js
                 -- knexfile.js
             -- orm
                 -- knex
@@ -36,26 +37,26 @@
                 -- mysql
                     -- knex
                         -- knex-registration-repository.js
-	    - interface
-			-- controllers
+        - interface
+    		-- controllers
                 -- controller-erros.js
                 -- export-registration-controller.js
-			-- helppers
-			    -- http-response.js
-	    - main
-			-- adapters
+    		-- helppers
+    		    -- http-response.js
+        - main
+    		-- adapters
                 -- express-router-adapter.js
-			-- composers
-			    -- export-registration-router-composer.js             
-			-- config
-			    -- app.js             
-                -- routes.js     
-                -- setup.js             
-			-- routes
-			    -- export-registration-routes.js             
+    		-- composers
+    		    -- export-registration-router-composer.js
+    		-- config
+    		    -- app.js
+                -- routes.js
+                -- setup.js
+    		-- routes
+    		    -- export-registration-routes.js
             -- index.js
-	    - shared
-			-- util
+        - shared
+    		-- util
                 -- errors
                     -- index.js
                     -- not-found-error.js
