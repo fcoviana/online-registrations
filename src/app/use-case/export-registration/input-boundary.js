@@ -1,7 +1,6 @@
 module.exports = class InputBoundary {
-  constructor({ cpf, pdfFileName, path }) {
+  constructor({ cpf, jsonFileName }) {
     this.cpf = cpf;
-    this.pdfFileName = pdfFileName;
-    this.path = path;
+    this.jsonFileName = jsonFileName;
   }
 };

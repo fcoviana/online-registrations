@@ -10,12 +10,12 @@ module.exports = class ExportRegistration {
 
   async handle(input) {
     const inputBoundary = new InputBoundary(input);
-    const { cpf, pdfFileName, path } = inputBoundary;
+    const { cpf, jsonFileName } = inputBoundary;
     const registration = await this.registationRepository.loadByRegistrationNumber(cpf);
 
     const fileContent = this.exportRegistrationJsonExporter.generate(registration);
-    await this.storage.store(pdfFileName, path, fileContent);
+    const filePath = await this.storage.store(jsonFileName, fileContent);
 
-    return new OutputBoundary(`${path}/${pdfFileName}.json`);
+    return new OutputBoundary(filePath);
   }
 };

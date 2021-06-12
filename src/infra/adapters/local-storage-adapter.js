@@ -2,9 +2,10 @@ const fs = require('fs');
 const Storage = require('../../app/contracts/storage');
 
 module.exports = class LocalStorageAdapter extends Storage {
-  async store(fileName, path, content) {
-    await fs.writeFileSync(`${path}/${fileName}.json`, content);
+  async store(fileName, content) {
+    const filePath = `${process.cwd()}/${fileName}.json`;
+    await fs.writeFileSync(filePath, content);
     
-    return true;
+    return filePath;
   }
 }

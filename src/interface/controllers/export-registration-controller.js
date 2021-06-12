@@ -11,8 +11,7 @@ module.exports = class ExportRegistrationController {
       const { cpf } = httpRequest.params;
       const fullFileName = await this.exportRegistrationUseCase.handle({
         cpf,
-        pdfFileName: `registration_${new Date().getTime()}`,
-        path: "/home/fco/workspacer/js/online-registrations/data",
+        jsonFileName: `registration_${new Date().getTime()}`,
       });
 
       return HttpResponse.ok({ fullFileName });
