@@ -3,20 +3,20 @@
 #### 1. Code structure
     src
 	    - app
-			-- contracts
-                -- export-registration-json-exporter.js
-                -- storage.js
-			-- use-case
-			    -- export-registration
-                    -- export-registration.js
-                    -- input-boundary.js
-                    -- output-boundary.js
+					-- contracts
+          -- export-registration-json-exporter.js
+                	-- storage.js
+		-- use-case
+			-- export-registration
+                    		-- export-registration.js
+                    		-- input-boundary.js
+                    		-- output-boundary.js
 	    - domain
-			-- entities
-                -- registration.js
-			-- repositories
-			    -- registration-repository.js
-            -- value-objects
+		-- entities
+                	-- registration.js
+		-- repositories
+			-- registration-repository.js
+            	-- value-objects
 			    -- cpf.js
                 -- registration-repository.js
                 -- email.js
