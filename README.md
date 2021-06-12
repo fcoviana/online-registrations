@@ -1,11 +1,22 @@
 # Online Registrations
 
-#### 1. Code structure
+### Project anatomy
 
-    src
-	- app
-	- domain
-	- infra
-	- interface
-	- main
-	- shared
+```
+ src
+    └ app
+       └ contracts
+       └ use-case
+    └ domain
+    └ infra
+	   └ adapters
+       └ config
+       └ orm
+          └ knex
+       └ repositories
+    └ interfaces
+       └ controllers
+	└ main
+       └ index.js
+ └ node_modules (generated)
+```
