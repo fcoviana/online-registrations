@@ -9,14 +9,14 @@
        └ use-case
     └ domain
     └ infra
-	   └ adapters
+       └ adapters
        └ config
        └ orm
           └ knex
        └ repositories
     └ interfaces
        └ controllers
-	└ main
+    └ main
        └ index.js
  └ node_modules (generated)
 ```
