@@ -17,6 +17,7 @@
     "knex": "^0.20.13",
     "mysql": "^2.18.1",
     "express": "^4.17.1",
-    "fast-glob": "^3.2.5"
+    "fast-glob": "^3.2.5",
+    "jsonwebtoken": "^8.5.1"
   }
 }
